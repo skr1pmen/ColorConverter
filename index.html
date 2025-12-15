@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Конвертер цветов: Hex/RGB в OKLCH и HLS</title>
+    <title data-i18n="title">Конвертер цветов: Hex/RGB в OKLCH и HLS</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./i18n.js" defer></script>
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-palette"></i> Конвертер цветов</h1>
+            <h1><i class="fas fa-palette"></i> <span data-i18n="header_title">Конвертер цветов</span></h1>
             <div class="header-controls">
                 <button class="btn-info" id="infoButton" title="Информация о цветах">
-                    <i class="fas fa-info-circle"></i> О цветах
+                    <i class="fas fa-info-circle"></i> <span data-i18n="about_colors">О цветах</span>
                 </button>
+                <div class="language-switcher">
+                    <button class="language-btn" data-lang="ru" title="Русский">RU</button>
+                    <button class="language-btn" data-lang="en" title="English">EN</button>
+                </div>
                 <div class="theme-toggle" id="themeToggle">
                     <i class="fas fa-sun sun"></i>
                     <i class="fas fa-moon moon"></i>
@@ -25,25 +32,25 @@
         <div class="main-content">
             <div class="card">
                 <div class="color-preview">
-                    <h2>Предпросмотр цвета</h2>
+                    <h2 data-i18n="color_preview">Предпросмотр цвета</h2>
                     <div class="color-display" id="colorDisplay">
                         <div class="color-display-hex" id="colorHexDisplay"></div>
                     </div>
 
                     <div class="color-inputs">
                         <div class="input-group">
-                            <label for="hexInput">HEX цвет</label>
+                            <label for="hexInput" data-i18n="hex_color">HEX цвет</label>
                             <input type="text" id="hexInput" placeholder="#4f46e5" maxlength="7">
                         </div>
                         <div class="input-group">
-                            <label for="rgbInput">RGB цвет</label>
+                            <label for="rgbInput" data-i18n="rgb_color">RGB цвет</label>
                             <input type="text" id="rgbInput" placeholder="rgb(79, 70, 229)" maxlength="30">
                         </div>
                     </div>
 
                     <div class="custom-color-picker" id="colorPickerContainer">
                         <div class="picker-header">
-                            <label>Выберите цвет:</label>
+                            <label data-i18n="select_color">Выберите цвет:</label>
                             <div class="picker-preview" id="pickerPreview"></div>
                         </div>
 
@@ -76,7 +83,7 @@
 
                                 <div class="picker-buttons">
                                     <button class="btn-secondary" id="resetPicker">
-                                        <i class="fas fa-redo"></i> Сбросить
+                                        <i class="fas fa-redo"></i> <span data-i18n="reset">Сбросить</span>
                                     </button>
                                 </div>
                             </div>
@@ -86,15 +93,15 @@
             </div>
 
             <div class="card">
-                <h2>Результаты конвертации</h2>
+                <h2 data-i18n="conversion_results">Результаты конвертации</h2>
                 <div class="color-results">
                     <div class="color-result">
                         <div class="color-result-header">
                             <div class="color-result-title">
-                                <i class="fas fa-wave-square"></i> OKLCH цвет
+                                <i class="fas fa-wave-square"></i> <span data-i18n="oklch_color">OKLCH цвет</span>
                             </div>
                             <button class="copy-btn" data-clipboard-target="#oklchValue">
-                                <i class="far fa-copy"></i> Копировать
+                                <i class="far fa-copy"></i> <span data-i18n="copy">Копировать</span>
                             </button>
                         </div>
                         <div class="color-value" id="oklchValue">oklch(62.8% 0.258 276.5)</div>
@@ -103,10 +110,10 @@
                     <div class="color-result">
                         <div class="color-result-header">
                             <div class="color-result-title">
-                                <i class="fas fa-sliders-h"></i> HLS цвет
+                                <i class="fas fa-sliders-h"></i> <span data-i18n="hls_color">HLS цвет</span>
                             </div>
                             <button class="copy-btn" data-clipboard-target="#hlsValue">
-                                <i class="far fa-copy"></i> Копировать
+                                <i class="far fa-copy"></i> <span data-i18n="copy">Копировать</span>
                             </button>
                         </div>
                         <div class="color-value" id="hlsValue">hsl(242, 78%, 59%)</div>
@@ -115,10 +122,10 @@
                     <div class="color-result">
                         <div class="color-result-header">
                             <div class="color-result-title">
-                                <i class="fas fa-sliders-h"></i> HSV цвет
+                                <i class="fas fa-sliders-h"></i> <span data-i18n="hsv_color">HSV цвет</span>
                             </div>
                             <button class="copy-btn" data-clipboard-target="#hsvValue">
-                                <i class="far fa-copy"></i> Копировать
+                                <i class="far fa-copy"></i> <span data-i18n="copy">Копировать</span>
                             </button>
                         </div>
                         <div class="color-value" id="hsvValue">hsv(242, 78%, 90%)</div>
@@ -127,10 +134,10 @@
                     <div class="color-result">
                         <div class="color-result-header">
                             <div class="color-result-title">
-                                <i class="fas fa-palette"></i> RGB цвет
+                                <i class="fas fa-palette"></i> <span data-i18n="rgb_color">RGB цвет</span>
                             </div>
                             <button class="copy-btn" data-clipboard-target="#rgbValue">
-                                <i class="far fa-copy"></i> Копировать
+                                <i class="far fa-copy"></i> <span data-i18n="copy">Копировать</span>
                             </button>
                         </div>
                         <div class="color-value" id="rgbValue">rgb(79, 70, 229)</div>
@@ -139,10 +146,10 @@
                     <div class="color-result">
                         <div class="color-result-header">
                             <div class="color-result-title">
-                                <i class="fas fa-hashtag"></i> HEX цвет
+                                <i class="fas fa-hashtag"></i> <span data-i18n="hex_color">HEX цвет</span>
                             </div>
                             <button class="copy-btn" data-clipboard-target="#hexValue">
-                                <i class="far fa-copy"></i> Копировать
+                                <i class="far fa-copy"></i> <span data-i18n="copy">Копировать</span>
                             </button>
                         </div>
                         <div class="color-value" id="hexValue">#4f46e5</div>
@@ -155,74 +162,74 @@
         <div class="modal-overlay" id="modalOverlay">
             <div class="modal" id="infoModal">
                 <div class="modal-header">
-                    <h3><i class="fas fa-info-circle"></i> Информация о цветовых форматах</h3>
+                    <h3><i class="fas fa-info-circle"></i> <span data-i18n="modal_title">Информация о цветовых форматах</span></h3>
                     <button class="modal-close" id="modalClose">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
                 <div class="modal-content">
                     <div class="info-section">
-                        <h4><i class="fas fa-wave-square"></i> OKLCH</h4>
-                        <p>Современный перцептуально-однородный цветовой формат, который учитывает особенности человеческого зрения. Состоит из трех компонентов:</p>
+                        <h4><i class="fas fa-wave-square"></i> <span data-i18n="oklch_title">OKLCH</span></h4>
+                        <p data-i18n="oklch_description">Современный перцептуально-однородный цветовой формат, который учитывает особенности человеческого зрения. Состоит из трех компонентов:</p>
                         <ul>
-                            <li><strong>Lightness (L)</strong> - воспринимаемая яркость (0-100%)</li>
-                            <li><strong>Chroma (C)</strong> - насыщенность цвета (0-0.5+)</li>
-                            <li><strong>Hue (H)</strong> - оттенок цвета (0-360 градусов)</li>
+                            <li><strong data-i18n="oklch_lightness">Lightness (L)</strong> - <span data-i18n="oklch_lightness_desc">воспринимаемая яркость (0-100%)</span></li>
+                            <li><strong data-i18n="oklch_chroma">Chroma (C)</strong> - <span data-i18n="oklch_chroma_desc">насыщенность цвета (0-0.5+)</span></li>
+                            <li><strong data-i18n="oklch_hue">Hue (H)</strong> - <span data-i18n="oklch_hue_desc">оттенок цвета (0-360 градусов)</span></li>
                         </ul>
-                        <p>Более точно отражает восприятие цвета человеком по сравнению с другими моделями.</p>
+                        <p data-i18n="oklch_conclusion">Более точно отражает восприятие цвета человеком по сравнению с другими моделями.</p>
                     </div>
 
                     <div class="info-section">
-                        <h4><i class="fas fa-sliders-h"></i> HSL (Hue, Saturation, Lightness)</h4>
-                        <p>Цилиндрическая модель представления цвета, более интуитивная для человека чем RGB:</p>
+                        <h4><i class="fas fa-sliders-h"></i> <span data-i18n="hsl_title">HSL (Hue, Saturation, Lightness)</span></h4>
+                        <p data-i18n="hsl_description">Цилиндрическая модель представления цвета, более интуитивная для человека чем RGB:</p>
                         <ul>
-                            <li><strong>Hue (H)</strong> - оттенок цвета (0-360°)</li>
-                            <li><strong>Saturation (S)</strong> - насыщенность (0-100%)</li>
-                            <li><strong>Lightness (L)</strong> - светлота (0-100%)</li>
+                            <li><strong data-i18n="hsl_hue">Hue (H)</strong> - <span data-i18n="hsl_hue_desc">оттенок цвета (0-360°)</span></li>
+                            <li><strong data-i18n="hsl_saturation">Saturation (S)</strong> - <span data-i18n="hsl_saturation_desc">насыщенность (0-100%)</span></li>
+                            <li><strong data-i18n="hsl_lightness">Lightness (L)</strong> - <span data-i18n="hsl_lightness_desc">светлота (0-100%)</span></li>
                         </ul>
-                        <p>При 0% светлота - черный, при 100% - белый, при 50% - чистый цвет.</p>
+                        <p data-i18n="hsl_conclusion">При 0% светлота - черный, при 100% - белый, при 50% - чистый цвет.</p>
                     </div>
 
                     <div class="info-section">
-                        <h4><i class="fas fa-sliders-h"></i> HSV (Hue, Saturation, Value)</h4>
-                        <p>Альтернатива HSL, также известная как HSB (Hue, Saturation, Brightness). Используется в большинстве графических редакторов:</p>
+                        <h4><i class="fas fa-sliders-h"></i> <span data-i18n="hsv_title">HSV (Hue, Saturation, Value)</span></h4>
+                        <p data-i18n="hsv_description">Альтернатива HSL, также известная как HSB (Hue, Saturation, Brightness). Используется в большинстве графических редакторов:</p>
                         <ul>
-                            <li><strong>Hue (H)</strong> - оттенок цвета (0-360°)</li>
-                            <li><strong>Saturation (S)</strong> - насыщенность (0-100%)</li>
-                            <li><strong>Value (V)</strong> - яркость (0-100%)</li>
+                            <li><strong data-i18n="hsv_hue">Hue (H)</strong> - <span data-i18n="hsv_hue_desc">оттенок цвета (0-360°)</span></li>
+                            <li><strong data-i18n="hsv_saturation">Saturation (S)</strong> - <span data-i18n="hsv_saturation_desc">насыщенность (0-100%)</span></li>
+                            <li><strong data-i18n="hsv_value">Value (V)</strong> - <span data-i18n="hsv_value_desc">яркость (0-100%)</span></li>
                         </ul>
-                        <p>При 0% значения - черный, при 100% насыщенности и значения - чистый цвет.</p>
+                        <p data-i18n="hsv_conclusion">При 0% значения - черный, при 100% насыщенности и значения - чистый цвет.</p>
                     </div>
 
                     <div class="info-section">
-                        <h4><i class="fas fa-palette"></i> RGB (Red, Green, Blue)</h4>
-                        <p>Аддитивная цветовая модель, основанная на смешении трех основных цветов:</p>
+                        <h4><i class="fas fa-palette"></i> <span data-i18n="rgb_title">RGB (Red, Green, Blue)</span></h4>
+                        <p data-i18n="rgb_description">Аддитивная цветовая модель, основанная на смешении трех основных цветов:</p>
                         <ul>
-                            <li><strong>Red (R)</strong> - красный компонент (0-255)</li>
-                            <li><strong>Green (G)</strong> - зеленый компонент (0-255)</li>
-                            <li><strong>Blue (B)</strong> - синий компонент (0-255)</li>
+                            <li><strong data-i18n="rgb_red">Red (R)</strong> - <span data-i18n="rgb_red_desc">красный компонент (0-255)</span></li>
+                            <li><strong data-i18n="rgb_green">Green (G)</strong> - <span data-i18n="rgb_green_desc">зеленый компонент (0-255)</span></li>
+                            <li><strong data-i18n="rgb_blue">Blue (B)</strong> - <span data-i18n="rgb_blue_desc">синий компонент (0-255)</span></li>
                         </ul>
-                        <p>Используется в мониторах, телевизорах и других устройствах отображения.</p>
+                        <p data-i18n="rgb_conclusion">Используется в мониторах, телевизорах и других устройствах отображения.</p>
                     </div>
 
                     <div class="info-section">
-                        <h4><i class="fas fa-hashtag"></i> HEX (шестнадцатеричный)</h4>
-                        <p>Шестнадцатеричное представление RGB цвета в веб-разработке:</p>
+                        <h4><i class="fas fa-hashtag"></i> <span data-i18n="hex_title">HEX (шестнадцатеричный)</span></h4>
+                        <p data-i18n="hex_description">Шестнадцатеричное представление RGB цвета в веб-разработке:</p>
                         <ul>
-                            <li><strong>Формат</strong>: #RRGGBB (например: #FF0000 - красный)</li>
-                            <li><strong>Сокращенный формат</strong>: #RGB (например: #F00 - красный)</li>
-                            <li>Каждая пара символов представляет компонент RGB в шестнадцатеричной системе</li>
+                            <li><strong data-i18n="hex_format">Формат</strong>: <span data-i18n="hex_format_desc">#RRGGBB (например: #FF0000 - красный)</span></li>
+                            <li><strong data-i18n="hex_short">Сокращенный формат</strong>: <span data-i18n="hex_short_desc">#RGB (например: #F00 - красный)</span></li>
+                            <li data-i18n="hex_components">Каждая пара символов представляет компонент RGB в шестнадцатеричной системе</li>
                         </ul>
-                        <p>Стандартный формат для указания цветов в HTML и CSS.</p>
+                        <p data-i18n="hex_conclusion">Стандартный формат для указания цветов в HTML и CSS.</p>
                     </div>
 
                     <div class="info-tip">
-                        <h5><i class="fas fa-lightbulb"></i> Совет по использованию</h5>
-                        <p>Используйте цветовой пикер для интуитивного выбора цвета или вводите значения вручную в любом формате. Все форматы автоматически синхронизируются. Нажмите на кнопку "Копировать" рядом с нужным форматом, чтобы скопировать значение в буфер обмена.</p>
+                        <h5><i class="fas fa-lightbulb"></i> <span data-i18n="tip_title">Совет по использованию</span></h5>
+                        <p data-i18n="tip_description">Используйте цветовой пикер для интуитивного выбора цвета или вводите значения вручную в любом формате. Все форматы автоматически синхронизируются. Нажмите на кнопку "Копировать" рядом с нужным форматом, чтобы скопировать значение в буфер обмена.</p>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn-primary" id="modalOkButton">Понятно</button>
+                    <button class="btn-primary" id="modalOkButton" data-i18n="modal_ok">Понятно</button>
                 </div>
             </div>
         </div>
@@ -230,20 +237,17 @@
         <div class="notification" id="notification">
             <div class="notification-content">
                 <i class="fas fa-check-circle"></i>
-                <div class="notification-message">Цвет скопирован в буфер обмена!</div>
+                <div class="notification-message" data-i18n="copy_notification">Цвет скопирован в буфер обмена!</div>
             </div>
         </div>
 
         <footer>
-            <p>Конвертер цветов Hex/RGB в OKLCH, HLS и HSV by skr1pmen &copy; 2025</p>
+            <p data-i18n="footer_copyright">Конвертер цветов Hex/RGB в OKLCH, HLS и HSV by skr1pmen © 2025</p>
             <a href="https://github.com/skr1pmen/ColorConverter" class="icon-link">
                 <span class="link-icon"><i class="fa-brands fa-github"></i></span>
                 GitHub
             </a>
         </footer>
     </div>
-
-    <script src="script.js"></script>
 </body>
-
 </html>
