@@ -6,6 +6,9 @@
 ![](https://img.shields.io/badge/%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-brightgreen)
 
 ## 🌐 Доступ к приложению: [Сайт](https://skr1pmen.github.io/ColorConverter/)
+Read this in other languages:
+[Русский](https://github.com/skr1pmen/ColorConverter/blob/main/README.md),
+[English](https://github.com/skr1pmen/ColorConverter/blob/main/README.en.md)
 
 Веб-приложение для конвертации цветов между различными форматами с современным интерфейсом и кастомным цветовым пикером.
 ## 🌟 Основные возможности
