@@ -1,6 +1,6 @@
 # Color Converter
 
-![](https://img.shields.io/badge/version-1.0.0-blue)
+![](https://img.shields.io/badge/version-1.0.1-blue)
 ![](https://img.shields.io/badge/license-MIT-green)
 ![](https://img.shields.io/badge/themes-light/dark-orange)
 ![](https://img.shields.io/badge/access-online-brightgreen)
