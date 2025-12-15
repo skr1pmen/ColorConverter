@@ -10,7 +10,7 @@ Read this in other languages:
 [Русский](https://github.com/skr1pmen/ColorConverter/blob/main/README.md),
 [English](https://github.com/skr1pmen/ColorConverter/blob/main/README.en.md)
 
-A web app for converting colors between different formats with a modern interface and a custom color picker.
+A web app for converting colors between different formats with a modern interface.
 ## 🌟 Key Features
 ### Color Format Conversion
 - HEX → OKLCH, HLS, HSV, RGB
